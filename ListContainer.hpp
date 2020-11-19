@@ -2,7 +2,6 @@
 #define __LISTCONTAINER_HPP__
 
 #include "container.hpp"
-#include "base.hpp"
 #include <list>
 #include <iterator>
 #include <iostream>
@@ -22,24 +21,23 @@ class ListContainer : public Container {
 		}
 		
 	}
-	virtual void sort(){conts.sort();}
+	virtual void sort(){sort_function->sort(this);}
 	virtual void swap(int i, int j){
-		assert(i<conts.size());
+		assert(i<=conts.size());
 		assert(i>=0);
-		assert(j<conts.size());
+		assert(j<=conts.size());
 		assert(j>=0);
+		if(i==j){return;}
 		std::list<Base*>::iterator iter1 = conts.begin();
 		std::list<Base*>::iterator iter2 = conts.begin();
 		for(int x=0; x<i;x++){iter1++;}
 		for(int y=0; y<j;y++){iter2++;}
-		Base* temp = *iter1;
-		*iter1 = *iter2;
-		**iter2 = *temp;
+		std::iter_swap(iter1,iter2);
 	}
 			
 			
 	virtual Base* at(int i){
-		assert(i<size());
+		assert(i<=size());
 		assert(i>=0);
 		std::list<Base*>::iterator iter = conts.begin();
 		for(int j = 0; j<i;j++){
