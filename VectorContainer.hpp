@@ -23,9 +23,9 @@ class VectorContainer : public Container{
 	
 	virtual	void print(){
 	    for(int i = 0; i < v.size() - 1; ++i){
-		cout << v[i]->stringify() << ", ";
+		    cout << v[i]->stringify() << ", ";
 	    }
-	    cout << v[v.size() - 1]->stringify() << endl;
+	        cout << v[v.size() - 1]->stringify() << endl;
 	}
 
 	virtual void sort(){
