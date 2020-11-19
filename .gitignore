@@ -5,3 +5,8 @@ cmake_install.cmake
 lab
 lib/
 test
+.ListContainer.hpp.swm
+.ListContainer.hpp.swn
+.ListContainer.hpp.swo
+.ListContainer.hpp.swp
+
